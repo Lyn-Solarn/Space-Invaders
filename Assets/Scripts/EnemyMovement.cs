@@ -22,7 +22,7 @@ public class InvaderMove : MonoBehaviour
             yield return new WaitForSeconds(delay);
             float nextX = transform.position.x + direction * step;
 
-            if (nextX > 5f || nextX < -5f)
+            if (nextX > 3f || nextX < -3f)
             {
                 transform.position += Vector3.down * down;
                 direction *= -1;
@@ -36,6 +36,9 @@ public class InvaderMove : MonoBehaviour
 
     void OnEnemyDied(float score)
     {
-        delay -= 0.05f;
+        if (!Mathf.Approximately(delay, 0.2f))
+        { 
+            delay -= 0.05f;
+        }
     }
 }

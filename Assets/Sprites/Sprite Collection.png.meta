@@ -103,10 +103,10 @@ TextureImporter:
       name: Sprite Collection_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 617
-        height: 2035
+        x: 390
+        y: 1166
+        width: 193
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,11 +121,143 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_1
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1282
+        width: 96
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc74d7fce61d4b8f92a09ba2b6bfbde
+      internalID: -47418456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_2
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1282
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb88adb752c6f4ca18a3e431617f4a8a
+      internalID: 608619909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1390
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d6d773b10bb4ddfa9f7287aefcafe9
+      internalID: 1281967844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_4
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1390
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2088ad81c302f4a39a9d34e5d9c411f5
+      internalID: -876170618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1494
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d06ccbf18274b4f886c3dbd230a737
+      internalID: -895947352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_6
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1493
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac50ac917b6d479ba87cbe92dbaa854
+      internalID: -2070017055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6f8e25d2ab0fb4df78af07e896603961
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +268,12 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Sprite Collection_0: 1192550883305499523
+      Sprite Collection_1: -47418456
+      Sprite Collection_2: 608619909
+      Sprite Collection_3: 1281967844
+      Sprite Collection_4: -876170618
+      Sprite Collection_5: -895947352
+      Sprite Collection_6: -2070017055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
