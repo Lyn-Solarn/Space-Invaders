@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - 30 Points
+  - 20 Points
+  - 10 Points
+  - 100 Points
+  - Barrier
   layers:
   - Default
   - TransparentFX
@@ -12,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Bullet
-  - 
-  - 
+  - Enemy
+  - Enemy Bullet
   - 
   - 
   - 

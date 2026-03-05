@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shootOffsetTransform;
 
-    public float speed;
-    public float maxDistance;
+    public float speed = 10;
+    public float maxDistance = 9.5f;
     
     Animator _animator;
 
@@ -42,6 +42,17 @@ public class Player : MonoBehaviour
             Vector3 newPosition = transform.position += new Vector3(speed, 0f, 0f) * Time.deltaTime;
             newPosition.x = Math.Clamp(newPosition.x, -maxDistance, maxDistance);
             transform.position = newPosition;
+        }
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy Bullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            Debug.Log("You Died.");
+            GameManager.Instance.GotoMainMenu();
         }
     }
 }
