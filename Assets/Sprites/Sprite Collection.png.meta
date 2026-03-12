@@ -284,7 +284,7 @@ TextureImporter:
         width: 24
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,6 +293,50 @@ TextureImporter:
       bones: []
       spriteID: 0c645a7fa69885043873368fc352aae6
       internalID: -1030329495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_9
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 831
+        width: 104
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da85486267a97348ba18a943fcbbd1f
+      internalID: 1951291001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Collection_10
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 676
+        width: 120
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9a3c304cb19e54fad81bc7e15c99c2
+      internalID: 1844116675
       vertices: []
       indices: 
       edges: []
@@ -313,6 +357,7 @@ TextureImporter:
     nameFileIdTable:
       Sprite Collection_0: 1192550883305499523
       Sprite Collection_1: -47418456
+      Sprite Collection_10: 1844116675
       Sprite Collection_2: 608619909
       Sprite Collection_3: 1281967844
       Sprite Collection_4: -876170618

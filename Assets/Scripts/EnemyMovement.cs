@@ -13,13 +13,33 @@ public class InvaderMove : MonoBehaviour
     public GameObject bulletPrefab;
     public float shootChance = 0.2f;
     public float bulletSpawnYOffset = -0.2f;
+    
+    private List<Animator> animators = new List<Animator>();
+    private bool stepToggle = false;
+    
+    public AudioClip fireSound;
+    AudioSource _AudioSource;
 
     int direction = 1;
 
     void Start()
     {
+        CollectAnimators();
         StartCoroutine(Move());
         Enemy.OnEnemyDied += OnEnemyDied;
+        
+        _AudioSource = GetComponent<AudioSource>();
+    }
+
+    void CollectAnimators()
+    {
+        animators.Clear();
+
+        foreach (var animator in GetComponentsInChildren<Animator>(true))
+        {
+            if (animator != null && animator.runtimeAnimatorController != null)
+                animators.Add(animator);
+        }
     }
 
     IEnumerator Move()
@@ -27,6 +47,7 @@ public class InvaderMove : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(delay);
+
             float nextX = transform.position.x + direction * step;
 
             if (nextX > 3.5f || nextX < -3.5f)
@@ -38,8 +59,27 @@ public class InvaderMove : MonoBehaviour
             {
                 transform.position = new Vector3(nextX, transform.position.y, 0);
             }
-            
+
+            // Toggle animation boolean every move
+            stepToggle = !stepToggle;
+            SetStepBoolOnAll(stepToggle);
+
             TryShoot();
+        }
+    }
+    
+    void SetStepBoolOnAll(bool value)
+    {
+        // Removes enemies that were destroyed
+        for (int i = animators.Count - 1; i >= 0; i--)
+        {
+            if (animators[i] == null)
+            {
+                animators.RemoveAt(i);
+                continue;
+            }
+
+            animators[i].SetBool("step", value);
         }
     }
 
@@ -66,6 +106,13 @@ public class InvaderMove : MonoBehaviour
 
         Transform shooter = GetRandomEnemyTransform();
         if (shooter == null) return;
+        
+        Animator animator = shooter.GetComponentInChildren<Animator>();
+        if (animator != null)
+        {
+            animator.SetTrigger("shoot");
+            _AudioSource.PlayOneShot(fireSound);
+        }
 
         Vector3 spawnPos = shooter.position + new Vector3(0f, bulletSpawnYOffset, 0f);
         Instantiate(bulletPrefab, spawnPos, Quaternion.identity);

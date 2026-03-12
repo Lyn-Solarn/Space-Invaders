@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -6,7 +7,24 @@ public class Enemy : MonoBehaviour
     public static event EnemyDiedFunc OnEnemyDied;
 
     private int points;
+    
+    public float deathDestroyDelay = 0.35f;
 
+    private Animator _animator;
+    private Collider2D _collider;
+    private bool dying = false;
+    
+    public AudioClip deathSound;
+    AudioSource _AudioSource;
+
+    void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider2D>();
+        
+        _AudioSource = GetComponent<AudioSource>();
+    }
+    
     void Start()
     {
         if (gameObject.CompareTag("10 Points"))
@@ -27,16 +45,33 @@ public class Enemy : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Ouch!");
+
+        if (dying) return;
         
-        // Destroy the bullet
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            
+            dying = true;
+            if (_collider != null)
+            {
+                _collider.enabled = false;
+            }
+
+            if (_animator != null && _animator.runtimeAnimatorController != null)
+            {
+                _animator.SetBool("isDead", true);
+                _AudioSource.PlayOneShot(deathSound);
+            }
             
             OnEnemyDied?.Invoke(points);
+            StartCoroutine(DestroyAfterDelay());
         }
-        
-        // todo - trigger death animation
+    }
+    
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(deathDestroyDelay);
+        Destroy(gameObject);
     }
 }

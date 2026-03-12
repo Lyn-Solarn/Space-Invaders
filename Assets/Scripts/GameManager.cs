@@ -124,4 +124,9 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("Schmup");
     }
+
+    public void GotoCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
